@@ -6,3 +6,8 @@ if(a> 1){
 }
 
 console.log(a);
+
+
+let y  = '200';
+let x  = 20;
+console.log(x + y)
