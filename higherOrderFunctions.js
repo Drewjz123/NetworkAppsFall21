@@ -3,7 +3,7 @@
 function greaterThan(a){
  return b => b > a;
  }
-}
+
 const greaterThan10 = greaterThan(19);
 const greaterThan20 = greaterThan(40);
 // greaterThan10 = function(b) {return b > 10}
