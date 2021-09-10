@@ -42,29 +42,50 @@ function findByPrefix(prefix){
 //To do: implement updateById(id, course)
 function updateById(id, course){
 
+    for(sub in courses){
+       if(courses[sub].id == id){
+            courses[sub] = course;
+            return true;
+       }
+    }
+    return false;
+    
     
 
 }
 
 //To do: implement removeById(id)
-
+ 
+function removeById(id){
+    for(course in courses){
+        if(courses[course].id == id){
+            courses.splice(course, 1);
+            
+        }
+    }
+}
 
 //To do: uncommet the following testing code when you are ready to test your functions
 
- save({ prefix: 'ITIS', id: 5250, title: 'Computer forensics' });
+ save({ prefix: 'ITIS', id: 5250, title: 'Computer forensics' }); //save function call 
+
 
  save({ prefix: 'ITIS', id: 6220, title: 'Data privacy' });
  save({ prefix: 'ITIS', id: 6420, title: 'Usable security and privacy' });
- //console.log(courses);
- //console.log(findById(5166));
+ console.log("This is for the courses ",courses);
+ console.log(findById(5166));
 console.log(findByPrefix('ITIS'));
 // console.log(removeById(6000));
-// console.log(updateById(6000));
-// console.log(updateById(5166, {
-//     prefix: 'ITIS',
-//     id: 5166,
-//     title: 'Network-based app development'
-// }, ));
-// console.log(removeById(6420));
+//console.log(courses);
+ console.log(updateById(6000));
+//console.log(courses);
+//   console.log(updateById(5166, {
+//      prefix: 'ITIS',
+//      id: 5166,
+//      title: 'Network-based app-development'
+//   }, ));
+//   console.log(courses);
+//  console.log(removeById(6420));
+ 
 // console.log(courses);
 
