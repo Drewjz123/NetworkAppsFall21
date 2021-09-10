@@ -69,11 +69,9 @@ function removeById(id){
 //To do: uncommet the following testing code when you are ready to test your functions
 
  save({ prefix: 'ITIS', id: 5250, title: 'Computer forensics' }); //save function call 
-
-
  save({ prefix: 'ITIS', id: 6220, title: 'Data privacy' });
  save({ prefix: 'ITIS', id: 6420, title: 'Usable security and privacy' });
- //console.log("This is for the courses ",courses);
+ console.log(courses);
  console.log(findById(5166));
 console.log(findByPrefix('ITIS'));
  console.log(removeById(6000));
@@ -88,5 +86,5 @@ console.log(updateById(6000));
    //console.log(courses);
   console.log(removeById(6420));
  
- //console.log(courses);
+ console.log(courses);
 
