@@ -22,18 +22,18 @@ const courses = [{
 
 //return course that matches the id
  function findById(id) {
-     return courses.find(course => course.id === id);
+     return courses.find(course => course.id === id);  // returns the object if the id match is found. 
  }
 
 //To do: implement save(course)
 function save(course){
-    courses.push(course);
+    courses.push(course); // add the new object at the end of the array.
 };
 
 //To do: implement findByPrefix(prefix)
 function findByPrefix(prefix){
 
-    return courses.filter(course => course.prefix == prefix)
+    return courses.filter(course => course.prefix == prefix)     // returns the filter output if the prefix match
 }
 
 
@@ -42,9 +42,9 @@ function findByPrefix(prefix){
 //To do: implement updateById(id, course)
 function updateById(id, course){
 
-    for(sub in courses){
-       if(courses[sub].id == id){
-            courses[sub] = course;
+    for(courseIndex in courses){
+       if(courses[courseIndex].id == id){        // compares the id with the parameter id 
+            courses[courseIndex] = course;       // updates the object in the courses array
             return true;
        }
     }
@@ -58,8 +58,8 @@ function updateById(id, course){
  
 function removeById(id){
     for(course in courses){
-        if(courses[course].id == id){
-            courses.splice(course, 1); //splice(index,1)
+        if(courses[course].id == id){    //compares the id
+            courses.splice(course, 1); //splice(index,1)  //removes the element at index course
             return true;
         }
     }
