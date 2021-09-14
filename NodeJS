@@ -1,0 +1,21 @@
+Modules:
+    JS modularization happens using Modules
+
+    each file is treated as a module 
+
+    local variables have the function as scope and cannot be accessed outside the function 
+
+    Module can export its variables with module.export 
+
+How to use a module in a different flie ? 
+
+    NodeJS we need to use the require function
+    Core Modules : Modules which come with NodeJS
+    const fs = require('fs');
+    "So basically we call the require function with its module name"
+
+    Local Module: This module is the one which is created by us; 
+
+    eg: 
+        We include local modules using the relative path of the file
+        const fs = require('./..');
