@@ -1,0 +1,35 @@
+html, body{
+ height: 100%;
+ margin: 0;
+}
+
+ul {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ background-color: skyblue;
+}
+
+li {
+ float: left;
+}
+
+li a { 
+ display: block;
+ color: black;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+}
+.main { 
+ min-height: 100%;
+}
+.main-inside{
+ padding: 20px;
+ padding-bottom: 50px;
+}
+.footer { 
+ height: 50px;
+ margin-top: -50px;
+}

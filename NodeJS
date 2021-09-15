@@ -19,3 +19,19 @@ How to use a module in a different flie ?
     eg: 
         We include local modules using the relative path of the file
         const fs = require('./..');
+
+
+    
+    How is a server made in NodeJS ? ?
+        
+        We need to require a core module 
+
+        const http = require('http');
+        
+        This will give us access to this core module. 
+
+        // Then we make the server by using this core module 
+
+        const server = http.createServer(); // This probably is a function call; 
+
+        // This module is a event emmiter, which means we can attach event listeners to it. 
