@@ -1,4 +1,5 @@
 const http = require('http');
+const fs = require('fs');
 const port = 8084;
 const host = 'localhost';
 const server = http.createServer( (req,res) => {
@@ -8,10 +9,21 @@ const server = http.createServer( (req,res) => {
  // console.log('header', req.headers);
 
  res.statusCode = 200;
- res.statusMessage = 'OK';
- res.setHeader('Content-type', 'text/plain');
- res.write('Hello');
- res.end();
+ res.statusMessage= 'OK';
+ res.setHeader('Content-Type', 'text/html');
+fs.readFile('./ProjectProtoype/index.html', (err,data) => {
+    if(err){
+        console.log(err);
+        res.end();
+    }
+    else{
+        res.write(data);
+        res.end();
+    }
+});
+// res.setHeader('Content-type', 'text/html');
+ //res.write('<p><h1>HelloWorld</h1></p>');
+ //res.end();
 });
 
 
