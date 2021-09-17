@@ -6,11 +6,11 @@ const port = 8080;              // assigning the port number
 let path = './';
 
 const server = http.createServer((req,res) =>{
-    res.statusCode = 200; 
+    res.statusCode = 200;                           // When there is no error status will be 200
     res.setHeader('Content-Type','text/html');
     res.statusMessage = 'OK';
     
-    if(req.url === '/about'){
+    if(req.url === '/about'){                       //if else for different url requests
         path = path + 'views/about.html';
     }
     else if(req.url === '/contact'){
@@ -22,7 +22,7 @@ const server = http.createServer((req,res) =>{
     }
 
     fs.readFile(path, (err, data)=>{
-        if(err){
+        if(err){                                // error handling and writing data if no error 
             console.log(err);
             res.end();
         }else{
@@ -35,7 +35,7 @@ const server = http.createServer((req,res) =>{
 
 
 
-server.listen(port, host, () =>{
+server.listen(port, host, () =>{      // This is used to bind the server with the ports. 
     console.log('The server is running on port', port);
 })
 
