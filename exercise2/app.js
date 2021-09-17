@@ -22,7 +22,7 @@ const server = http.createServer((req,res) =>{
     }
 
     fs.readFile(path, (err, data)=>{
-        if(err){                                // error handling and writing data if no error 
+        if(err){                                // error handling and writing data if no error
             console.log(err);
             res.end();
         }else{
