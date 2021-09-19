@@ -1,19 +1,23 @@
 const http = require('http'); // importing the http module 
 const fs = require('fs');       // importing the file module    
 const host = 'localhost';       // assigning the host name
-const port = 8080;              // assigning the port number
+const port = 8084;              // assigning the port number
+const _ = require('lodash');
 
 let path = './';
 
-const server = http.createServer((req,res) =>{
+const server = http.createServer((req, res) => {
+    // lodash
+
+
     res.statusCode = 200;                           // When there is no error status will be 200
-    res.setHeader('Content-Type','text/html');
+    res.setHeader('Content-Type', 'text/html');
     res.statusMessage = 'OK';
-    
-    if(req.url === '/about'){                       //if else for different url requests
+
+    if (req.url === '/about') {                       //if else for different url requests
         path = path + 'views/about.html';
     }
-    else if(req.url === '/contact'){
+    else if (req.url === '/contact') {
         path = path + 'views/contact.html';
     }
     else {
@@ -21,11 +25,11 @@ const server = http.createServer((req,res) =>{
         path = path + 'views/404.html';
     }
 
-    fs.readFile(path, (err, data)=>{
-        if(err){                                // error handling and writing data if no error
+    fs.readFile(path, (err, data) => {
+        if (err) {                                // error handling and writing data if no error
             console.log(err);
             res.end();
-        }else{
+        } else {
             res.write(data);
             res.end();
         }
@@ -35,7 +39,7 @@ const server = http.createServer((req,res) =>{
 
 
 
-server.listen(port, host, () =>{      // This is used to bind the server with the ports. 
+server.listen(port, host, () => {      // This is used to bind the server with the ports. 
     console.log('The server is running on port', port);
 })
 
